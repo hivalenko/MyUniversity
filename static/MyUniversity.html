@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <a href="#" class="scrollup">Наверх</a>
@@ -32,45 +34,6 @@
     </div>
   </div>
 </nav>
-
-<div id="carousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel" data-slide-to="1"></li>
-    <li data-target="#carousel" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="image.png" alt="">
-      <div class="carousel-caption slide-text">
-        <p>Наша система позволяет пользователю сформировать индивидуальную траекторию развития в соответствии с его пожеланиями и компетенциями специальности, включая дополнительные образовательные курсы.</p>
-      </div>
-    </div>
-    <div class="item">
-      <img src="photo2.jpg" alt="">
-      <div class="carousel-caption slide-text">
-        <p>Наша система обучена при помощи технологии Machine Learning, а удобная лаконичная визуализация в виде графа поможет соориентироваться пользователю любого уровня владения информационными технологиями.</p>
-      </div>
-    </div>
-    <div class="item">
-      <img src="photo1.jpg" alt="">
-      <div class="carousel-caption slide-text">
-        <p>Для вас с удовольствием работала команда sqrt(1764) в составе: Сергачева Данилы, Минина Александра, Коваленко Егора, Ярошевича Александра, Буракова Ильи и Жетесовой Даны. До новых встреч!)</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-    <span class="fa fa-arrow-left" aria-hidden="true"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-    <span class="fa fa-arrow-right" aria-hidden="true"></span>
-  </a>
-</div>
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
@@ -98,7 +61,7 @@
 });
 </script>
 
-<!-- <div class="container">
+<div class="container">
   <h3>My University</h3>
   <p>Наша система позволяет пользователю сформировать индивидуальную траекторию развития в соответствии с его пожеланиями и компетенциями специальности, включая дополнительные образовательные курсы.</p>
   <img src="image.png" width="100%"></img></br>
@@ -107,10 +70,10 @@
   <p>Наша система обучена при помощи технологии Machine Learning, а удобная лаконичная визуализация в виде графа поможет соориентироваться пользователю любого уровня владения информационными технологиями.</p>
   <img src="photo1.jpg" width="100%"></img></br>
   <p>Для вас с удовольствием работала команда sqrt(1764) в составе: Сергачева Данилы, Минина Александра, Коваленко Егора, Ярошевича Александра, Буракова Ильи и Жетесовой Даны. До новых встреч!)</p>
-</div> -->
+</div>
 
 <div class="container-fluid" id="footer">
-  <a id="gotodown"/>
+  <a id="#gotodown"/>
   <div class="row" style="text-align: right; margin-right: -95%;">  
       <div class="col-md-1" style="font-size: 32px"><a href="#" class="fa fa-facebook-square" aria-hidden="true"></a></div>
       <div class="col-md-1" style="font-size: 32px"><a href="#" class="fa fa-instagram" aria-hidden="true"></a></div>
@@ -123,7 +86,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){ 
- 
+ 
 $(window).scroll(function(){
 if ($(this).scrollTop() > 100) {
 $('.scrollup').fadeIn();
@@ -131,12 +94,12 @@ $('.scrollup').fadeIn();
 $('.scrollup').fadeOut();
 }
 }); 
- 
+ 
 $('.scrollup').click(function(){
 $("html, body").animate({ scrollTop: 0 }, 600);
 return false;
 });
- 
+ 
 });
 </script>
 </html>
