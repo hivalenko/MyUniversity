@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Concert+One|Hammersmith+One|Maven+Pro|Poppins'); 
-
+@import url('https://fonts.googleapis.com/css?family=Concert+One|Hammersmith+One|Maven+Pro|Poppins|Roboto'); 
 
 /* navbar */
 body{
@@ -11,10 +10,22 @@ body{
     color: #4C8CBD;
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
-
-
-
+    s-webkit-tap-highlight-color: rgba(0,0,0,0);
+    margin: 0 auto 4em auto;
+    tab-size: 2;
 }
+
+iframe {
+    border-width: 0px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    border: solid 0px #eee;
+    border-bottom: solid 0px #ccc;
+    margin-left: 0px;
+    width: 100%;   
+}
+
 .navbar-default {
     background: linear-gradient(to right, #77c9d4, #57bc90);";
     border-color: #E7E7E7;
@@ -39,72 +50,12 @@ body{
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
     color: #ffffff;
-    background-color: #77c9d4;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
     color: #013249;
-    background-color: #77c9d4;
-}
-/* Caret */
-.navbar-default .navbar-nav > .dropdown > a .caret {
-    border-top-color: white;
-    border-bottom-color: white;
-}
-.navbar-default .navbar-nav > .dropdown > a:hover .caret,
-.navbar-default .navbar-nav > .dropdown > a:focus .caret {
-    border-top-color: #328972;
-    border-bottom-color: #328972;
-}
-.navbar-default .navbar-nav > .open > a .caret,
-.navbar-default .navbar-nav > .open > a:hover .caret,@import url('https://fonts.googleapis.com/css?family=Concert+One|Hammersmith+One|Maven+Pro|Poppins|Roboto'); 
-
-/* navbar */
-body{
-
-    background-color: #FFFFFF;
-    font-family: "Maven Pro";
-    font-weight: 300;
-    font-size: 16;
-    color: #4C8CBD;
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
-
-
-
-}
-.navbar-default {
-    background: linear-gradient(to right, #77c9d4, #57bc90);";
-    border-color: #E7E7E7;
-}
-/* Title */
-.navbar-default .navbar-brand {
-    color: white;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-    color: #5E5E5E;
-}
-/* Link */
-.navbar-default .navbar-nav > li > a {
-    color: white;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    color: #328972;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-    color: #ffffff;
-    background-color: #77c9d4;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-    color: #013249;
-    background-color: #77c9d4;
+    background-color: transparent;
 }
 /* Caret */
 .navbar-default .navbar-nav > .dropdown > a .caret {
@@ -238,40 +189,35 @@ body{
 h1{
     color: #57bc90;
 }
-.navbar-default .navbar-nav > .open > a:focus .caret {
-    border-top-color: #013249;
-    border-bottom-color: #013249;
+p{
+     color: #57bc90;
 }
-/* Mobile version */
-.navbar-default .navbar-toggle {
-    border-color: #013249;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-    background-color: #013249;
-}
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #013249;
-}
-@media (max-width: 767px) {
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-        color: white;
-    }
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-          color: #328972;
-    }
+.navbar-login
+{
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
 }
 
-.basement{
-	size: 20;
-	color: #C0C0C0;
-	text-decoration: overline;
-	background-color: grey;
-	margin-left: 30px;
-	margin-right: 10px;
-	margin-bottom: 60px;
-	margin-top: 80px;
-	text-decoration: overline;
-	text-decoration-color: grey;
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.icon-size
+{
+    font-size: 87px;
+}
+a{
+    color: #77c9d4;
+}
+#footer{
+    height: 40px;
+    align-content: center;
+    margin-top: 30px;
+    background-color: #DEDEDE;
+    color: #36977D;
+    size: 30px;
 }
