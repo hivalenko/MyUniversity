@@ -7,9 +7,11 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<a href="#" class="scrollup">Наверх</a>
 <body>
 
 <nav class="navbar navbar-default">
@@ -24,7 +26,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="#gotodown">Contact Us</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="fa fa-sign-in" aria-hidden="true"></span> Log in</a></li>
@@ -49,30 +51,55 @@
         </div>
       </div>
       </div>
-  
+
+<script type="text/javascript">
+  $(window).on('load scroll',function(){ 
+    if ($(this).scrollTop() >= '150') {
+        $('#fixed').addClass("show");
+    }
+    else  {$('#fixed').removeClass("show");}
+});
+</script>
+
 <div class="container">
   <h3>My University</h3>
-  <p>This system is made for calculating and predicting personificated education and individual progress vector combined with common education trajectory.</p>
-  <img src="photo1.jpg" width="100%"></img></br>
-  <p></p>
-  <img src="photo2.jpg" width="100%"></img></br>
-  <p></p>
+  <p>Наша система позволяет пользователю сформировать индивидуальную траекторию развития в соответствии с его пожеланиями и компетенциями специальности, включая дополнительные образовательные курсы.</p>
   <img src="image.png" width="100%"></img></br>
-  <p></p>
+  <p>Наша система ориентируется не только на индивидуальные требования пользователя, но и уровень его провессионального развития, рассчитанного по текущим пройденным курсам и освоенным навыкам.</p>
+  <img src="photo2.jpg" width="100%"></img></br>
+  <p>Наша система обучена при помощи технологии Machine Learning, а удобная лаконичная визуализация в виде графа поможет соориентироваться пользователю любого уровня владения информационными технологиями.</p>
+  <img src="photo1.jpg" width="100%"></img></br>
+  <p>Для вас с удовольствием работала команда sqrt(1764) в составе: Сергачева Данилы, Минина Александра, Коваленко Егора, Ярошевича Александра, Буракова Ильи и Жетесовой Даны. До новых встреч!)</p>
 </div>
-
 
 <div class="container-fluid" id="footer">
-  <div class="row">  
-      <div class="col-md-1" style="margin-top: 9px;">Contact us:</div>
-      <div class="col-md-1" style="margin-top: 9px;"><a href="#" class="fa fa-facebook-square" aria-hidden="true"></a></div>
-      <div class="col-md-1" style="margin-top: 9px;"><a href="#" class="fa fa-instagram" aria-hidden="true"></a></div>
-      <div class="col-md-1" style="margin-top: 9px;"><a href="#" class="fa fa-vk" aria-hidden="true"></a></div>
-      <div class="col-md-1" style="margin-top: 9px;"><a href="#" class="fa fa-twitter" aria-hidden="true"></a></div>
-      <div class="col-md-1" style="margin-top: 9px;"><a href="#" class="fa fa-telegram" aria-hidden="true"></a></div>
+  <a id="#gotodown"/>
+  <div class="row" style="text-align: right; margin-right: -95%;">  
+      <div class="col-md-1" style="font-size: 32px"><a href="#" class="fa fa-facebook-square" aria-hidden="true"></a></div>
+      <div class="col-md-1" style="font-size: 32px"><a href="#" class="fa fa-instagram" aria-hidden="true"></a></div>
+      <div class="col-md-1" style="font-size: 32px"><a href="#" class="fa fa-vk" aria-hidden="true"></a></div>
+      <div class="col-md-1" style="font-size: 32px"><a href="#" class="fa fa-twitter" aria-hidden="true"></a></div>
+      <div class="col-md-1" style="font-size: 32px"><a href="#" class="fa fa-telegram" aria-hidden="true"></a></div>
   </div>  
 </div>
-
-
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+ 
+$(window).scroll(function(){
+if ($(this).scrollTop() > 100) {
+$('.scrollup').fadeIn();
+} else {
+$('.scrollup').fadeOut();
+}
+}); 
+ 
+$('.scrollup').click(function(){
+$("html, body").animate({ scrollTop: 0 }, 600);
+return false;
+});
+ 
+});
+</script>
 </html>
