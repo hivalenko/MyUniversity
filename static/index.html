@@ -48,11 +48,13 @@
                 .data(graph.nodes)
               .enter().append("circle")
                 .attr("class", "node")
-                .append("text",function(d){return d.x;})
                 .attr("r", 7)
                 .style("fill", function(d) { return colorNode(d.group); })
 //                 .call(force.drag);
                  
+            node.append("text")
+                .text(function(d) {return d.name;});
+            
             node.append("title")
                 .text(function(d) { return d.name; });
 
