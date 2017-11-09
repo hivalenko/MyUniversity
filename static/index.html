@@ -14,8 +14,8 @@
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script>
 
-        var width = 960,
-            height = 500;
+        var width = 1600,
+            height = 900;
 
         var colorNode = d3.scale.category20(),
             colorLink = d3.scale.category10();
@@ -23,7 +23,7 @@
 
 
         var force = d3.layout.force()
-            .charge(-120)
+            .charge(-50)
             .linkDistance(35)
             .size([width, height]);
 
