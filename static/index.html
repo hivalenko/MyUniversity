@@ -5,7 +5,9 @@
         stroke: #fff;
         stroke-width: 3px;
     }
-
+    .node text{
+        font: 12px sans-serif;
+    }
     .link {
         stroke-opacity: .6;
     }
@@ -52,7 +54,7 @@
                 .style("fill", function(d) { return colorNode(d.group); })
 //                 .call(force.drag);
                  
-            node.append("text")
+            node.append('text')
                 .attr("x",-13)
                 .text(function(d){return d.name;});
             
