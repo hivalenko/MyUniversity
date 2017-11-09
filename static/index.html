@@ -25,7 +25,7 @@
         var force = d3.layout.force()
             .charge(-120)
             .linkDistance(35)
-            .size([100, 100]);
+            .size([width, height]);
 
         var svg = d3.select("body").append("svg")
             .attr("width", width)
