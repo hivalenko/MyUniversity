@@ -56,16 +56,21 @@ def get_graph():
 
 
 @APP.route('/api/getAdvices')
-def get_advices(uid):
+def get_advices():
+    uid = get_user_from_qstring()
     with DB_ENG.connect() as con:
         rsf = con.execute('SELECT NodeID FROM personal_progress '
-                         'WHERE `UserID`=%s AND isCompleted=1', uid).fetchall()
+                          'WHERE `UserID`=%s AND isCompleted=1', uid).fetchall()
         completed_cources = list(set([x['NodeID'] for x in rsf]))
 
         data = []
         for i in range(4):
             data.append(choice(completed_cources))
-        adv = ml.advice(data, completed_cources)
+        num = request.args.get('number')
+        if not num:
+            num = 1
+
+        adv = ml.advice(data, completed_cources, num)
 
         rsf = con.execute('SELECT name FROM nodes '
                           'WHERE `NodeID` in ' + str(tuple(adv))).fetchall()
