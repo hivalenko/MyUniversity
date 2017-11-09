@@ -1,64 +1,51 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<style>
-    .node {
-        stroke: #fff;
-        stroke-width: 1.5px;
-    }
+<style type="text/css">
+  
+  .node {
+    cursor: pointer;
+  }
 
-    .link {
-        stroke-opacity: .6;
-    }
+  .overlay{
+      background-color:#EEE;
+  }
+   
+  .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+   
+  .node text {
+    font-size:10px; 
+    font-family:sans-serif;
+  }
+   
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+  }
+
+  .templink {
+    fill: none;
+    stroke: red;
+    stroke-width: 3px;
+  }
+
+  .ghostCircle.show{
+      display:block;
+  }
+
+  .ghostCircle, .activeDrag .ghostCircle{
+       display: none;
+  }
+
 </style>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="dndTree.js"></script>
 <body>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script>
-
-        var width = 960,
-            height = 500;
-
-        var colorNode = d3.scale.category20(),
-            colorLink = d3.scale.category10();
-
-
-        var svg = d3.select("body").append("svg")
-            .attr("width", width)
-            .attr("height", height);
-
-        d3.json("family.json", function(error, graph) {
-            force
-                .nodes(graph.nodes)
-                .links(graph.links)
-                .start();
-
-            var link = svg.selectAll(".link")
-                .data(graph.links)
-              .enter().append("line")
-                .attr("class", "link")
-                .style("stroke-width", 2)
-                .style("stroke", function(d) { return colorLink(d.value); });
-
-            var node = svg.selectAll(".node")
-                .data(graph.nodes)
-              .enter().append("circle")
-                .attr("class", "node")
-                .attr("r", 7)
-                .style("fill", function(d) { return colorNode(d.group); })
-                .call(force.drag);
-
-            node.append("title")
-                .text(function(d) { return d.name; });
-
-            force.on("tick", function() {
-                link.attr("x1", function(d) { return d.source.x; })
-                    .attr("y1", function(d) { return d.source.y; })
-                    .attr("x2", function(d) { return d.target.x; })
-                    .attr("y2", function(d) { return d.target.y; });
-
-                node.attr("cx", function(d) { return d.x; })
-                    .attr("cy", function(d) { return d.y; });
-            });
-        });
-
-    </script>
+    <div id="tree-container"></div>
 </body>
+</html>
