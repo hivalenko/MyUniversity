@@ -1,9 +1,9 @@
 import joblib
 
-def __get_courses(proba, already_done, ada):
+def __get_courses(proba, already_done, number_of_courses):
     l = []
     proba = list(proba[0])
-    for i in range(3):
+    for i in range(number_of_courses):
         if proba is None:
             break
         while True:
@@ -21,7 +21,7 @@ def __load_model():
     return joblib.load('data\\model.pkl')
 
 
-def advice(data, already_done):
+def advice(data, already_done, number_of_courses):
     ada = __load_model()
     proba = ada.predict_proba(data)
-    return __get_courses(proba, already_done, ada)
+    return __get_courses(proba, already_done, number_of_courses)
