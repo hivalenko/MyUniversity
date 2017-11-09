@@ -18,7 +18,7 @@ def __get_courses(proba, already_done, number_of_courses):
 
 
 def __load_model():
-    return joblib.load('data\\model.pkl')
+    return joblib.load('mldata\\model.pkl')
 
 
 def advice(data, already_done, number_of_courses):

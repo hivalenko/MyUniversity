@@ -4,14 +4,19 @@ from sqlalchemy import create_engine
 import ml
 from random import choice
 
-APP = Flask(__name__)
+APP = Flask(__name__, static_folder='web', static_url_path='')
 DB_ENG = create_engine('mysql+pymysql://srv:yellowDwarf142@localhost/sqrt',
                        pool_recycle=3600)
 
-
 @APP.route('/')
+@APP.route('/index.html')
 def index():
-    return redirect('/static/MyUniversity.html')
+    return render_template('index.html')
+
+
+@APP.route('/graph')
+def graph():
+    return render_template('graph.html')
 
 
 def get_user_from_qstring():
