@@ -31,7 +31,7 @@
             .attr("width", width)
             .attr("height", height);
 
-        d3.json("flare.json", function(error, graph) {
+        d3.json("http://192.168.88.82/api/getGraph?user=1", function(error, graph) {
             force
                 .nodes(graph.nodes)
                 .links(graph.links)
