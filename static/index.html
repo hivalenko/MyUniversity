@@ -47,7 +47,7 @@
             var node = svg.selectAll(".node")
                 .data(graph.nodes)
               .enter().append("circle")
-                .append("text",function(d) { return d.name; })
+                .attr("text",function(d){return d.name})
                 .attr("class", "node")
                 .attr("r", 7)
                 .style("fill", function(d) { return colorNode(d.group); })
