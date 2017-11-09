@@ -1,6 +1,8 @@
 import json
 from flask import *
 from sqlalchemy import create_engine
+import ml
+from random import choice
 
 APP = Flask(__name__)
 DB_ENG = create_engine('mysql+pymysql://srv:yellowDwarf142@localhost/sqrt',
@@ -12,21 +14,21 @@ def index():
     return redirect('/static/MyUniversity.html')
 
 
-def need_user():
-    def wrapper():
-        try:
-            if not request.args.get('user'):
-                raise ValueError
-            int(request.args.get('user'))
-        except ValueError:
-            abort(400)
+def get_user_from_qstring():
+    try:
+        if not request.args.get('user'):
+            raise ValueError
+        return int(request.args.get('user'))
+    except ValueError:
+        return -1
 
 
-
-@APP.route('/api/getGraph.json')
-def getgraph_json():
+@APP.route('/api/getGraph')
+def get_graph():
+    uid = get_user_from_qstring()
     with DB_ENG.connect() as con:
-        uid = int(request.args.get('user'))
+        if uid == -1:
+            abort(400)
 
         rs = con.execute('SELECT * FROM personal_graphs '
                          'WHERE `userID`=%s', uid)
@@ -53,10 +55,24 @@ def getgraph_json():
         return json.dumps({'nodes': nodes, 'links': links})
 
 
-@APP.route('/api/getCompletedCourses.json')
-def getcompletedcourses_json():
-    pass
+@APP.route('/api/getAdvices')
+def get_advices(uid):
+    with DB_ENG.connect() as con:
+        rsf = con.execute('SELECT NodeID FROM personal_progress '
+                         'WHERE `UserID`=%s AND isCompleted=1', uid).fetchall()
+        completed_cources = list(set([x['NodeID'] for x in rsf]))
 
+        data = []
+        for i in range(4):
+            data.append(choice(completed_cources))
+        adv = ml.advice(data, completed_cources)
+
+        rsf = con.execute('SELECT name FROM nodes '
+                          'WHERE `NodeID` in ' + str(tuple(adv))).fetchall()
+        resp = []
+        for row in rsf:
+            resp.append(row['name'])
+        return json.dumps(resp)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,6 @@
-def get_courses(proba, already_done, ada):
+import joblib
+
+def __get_courses(proba, already_done, ada):
     l = []
     proba = list(proba[0])
     for i in range(3):
@@ -15,11 +17,11 @@ def get_courses(proba, already_done, ada):
     return l
 
 
-def load_model():
-    return joblib.load('model.pkl')
+def __load_model():
+    return joblib.load('data\\model.pkl')
 
 
-def advice(data,already_done):
-    ada = load_model()
+def advice(data, already_done):
+    ada = __load_model()
     proba = ada.predict_proba(data)
-    return get_courses(proba,already_done,ada)
+    return __get_courses(proba, already_done, ada)
