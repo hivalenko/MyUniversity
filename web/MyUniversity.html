@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MyUniversity</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid" >
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">MyUniversity</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#gotodown">Contact Us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="fa fa-sign-in" aria-hidden="true"></span> Log in</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <h1>Log in to Your Account</h1><br>
+          <form>
+          <input type="text" name="user" placeholder="Username" style="color: #57bc90">
+          <input type="password" name="pass" placeholder="Password" style="color: #57bc90">
+          <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+          </form>
+          
+          <div class="login-help">
+          <a href="#">Forgot Password</a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+<script type="text/javascript">
+  $(window).on('load scroll',function(){ 
+    if ($(this).scrollTop() >= '150') {
+        $('#fixed').addClass("show");
+    }
+    else  {$('#fixed').removeClass("show");}
+});
+</script>
+
+<div class="container">
+  <h3>My University</h3>
+  <p>Наша система позволяет пользователю сформировать индивидуальную траекторию развития в соответствии с его пожеланиями и компетенциями специальности, включая дополнительные образовательные курсы.</p>
+  <img src="image.png" width="100%"></img></br>
+  <p>Наша система ориентируется не только на индивидуальные требования пользователя, но и уровень его провессионального развития, рассчитанного по текущим пройденным курсам и освоенным навыкам.</p>
+  <img src="photo2.jpg" width="100%"></img></br>
+  <p>Наша система обучена при помощи технологии Machine Learning, а удобная лаконичная визуализация в виде графа поможет соориентироваться пользователю любого уровня владения информационными технологиями.</p>
+  <img src="photo1.jpg" width="100%"></img></br>
+  <p>Для вас с удовольствием работала команда sqrt(1764) в составе: Сергачева Данилы, Минина Александра, Коваленко Егора, Ярошевича Александра, Буракова Ильи и Жетесовой Даны. До новых встреч!)</p>
+</div>
+
+<div class="container-fluid" id="footer">
+  <a id="#gotodown"/>
+  <div class="row" style="text-align: right; margin-right: -95%;">  
+      <div class="col-md-1" style="font-size: 28px"><a href="#" class="fa fa-facebook-square" aria-hidden="true"></a></div>
+      <div class="col-md-1" style="font-size: 28px"><a href="#" class="fa fa-instagram" aria-hidden="true"></a></div>
+      <div class="col-md-1" style="font-size: 28px"><a href="#" class="fa fa-vk" aria-hidden="true"></a></div>
+      <div class="col-md-1" style="font-size: 28px"><a href="#" class="fa fa-twitter" aria-hidden="true"></a></div>
+      <div class="col-md-1" style="font-size: 28px"><a href="#" class="fa fa-telegram" aria-hidden="true"></a></div>
+  </div>  
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+ 
+$(window).scroll(function(){
+if ($(this).scrollTop() > 100) {
+$('.scrollup').fadeIn();
+} else {
+$('.scrollup').fadeOut();
+}
+}); 
+ 
+$('.scrollup').click(function(){
+$("html, body").animate({ scrollTop: 0 }, 600);
+return false;
+});
+ 
+});
+</script>
+</html>
