@@ -25,13 +25,13 @@
         var force = d3.layout.force()
             .charge(-120)
             .linkDistance(35)
-            .size([100, 100]);
+            .size([width, height]);
 
         var svg = d3.select("body").append("svg")
             .attr("width", width)
             .attr("height", height);
 
-        d3.json("flare.json", function(error, graph) {
+        d3.json("http://192.168.88.82/api/getGraph?user=1", function(error, graph) {
             force
                 .nodes(graph.nodes)
                 .links(graph.links)
