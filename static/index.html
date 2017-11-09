@@ -41,7 +41,7 @@
                 .data(graph.links)
               .enter().append("line")
                 .attr("class", "link")
-                .style("stroke-width", 2)
+                .style("stroke-width", 3)
                 .style("stroke", function(d) { return colorLink(d.value); });
 
             var node = svg.selectAll(".node")
